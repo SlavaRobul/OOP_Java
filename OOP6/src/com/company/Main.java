@@ -13,7 +13,7 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
 
-        URL url = new URL("https://api.weather.yandex.ru/v2/forecast?lat=59.939099&lon=30.315877");
+        URL url = new URL("https://api.weather.yandex.ru/v2/forecast?lat=59.939099&lon=30.315877&limit=5&hours=false&extra=false");
         HttpURLConnection con = (HttpURLConnection) url.openConnection();
         con.setRequestMethod("GET");
         con.setRequestProperty("X-Yandex-API-Key", "b77a7dd4-21c5-4282-ba93-820c1f9ff42b");
@@ -25,5 +25,7 @@ public class Main {
             content.append(inputLine);
         }
         System.out.println(content.toString());
+
+
     }
 }
